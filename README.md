@@ -36,13 +36,10 @@ Portfólio pessoal desenvolvido com HTML, CSS e JavaScript, apresentando minha t
 
 ### Acesse: https://srloga.github.io/
 
-### 🤝 Contribuições
-Contribuições são sempre bem-vindas! Sinta-se à vontade para:
-
 ### 📞 Contato
-Lucas Ramos - Desenvolvedor Web
-📧 Email: lucas.vinicius.loga@gmail.com
-📱 Telemóvel: +351 938 673 764
-🌐 LinkedIn: lucas-ramos-loga
-💻 GitHub: srloga
-🎯 HackerRank: lucas_vinicius_5
+- Lucas Ramos - Desenvolvedor Web
+- 📧 Email: lucas.vinicius.loga@gmail.com
+- 📱 Telemóvel: +351 938 673 764
+- 🌐 LinkedIn: lucas-ramos-loga
+- 💻 GitHub: srloga
+- 🎯 HackerRank: lucas_vinicius_5
