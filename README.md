@@ -38,54 +38,10 @@ Portfólio pessoal desenvolvido com HTML, CSS e JavaScript, apresentando minha t
 
 ## 🚀 Como Executar o Projeto
 
-### Pré-requisitos
-- Servidor web (Apache, Nginx, etc.)
-- PHP 7.4 ou superior
-- Navegador web moderno
-
-### Instalação Local
-
-1. **Clone o repositório**
-   ```bash
-   git clone https://github.com/srloga/portfolio.git
-   cd portfolio
-
-2. Configure o servidor web
-
-Coloque os arquivos na pasta pública do seu servidor (ex: htdocs, www, ou public_html)
-
-3. Configure o formulário de contato
-Edite o arquivo send.php e altere o email no campo $recipient:
-$recipient = "seu-email@dominio.com";
-
-4. Acesse o projeto
-
-Abra http://localhost/portfolio no navegador
-
-### Acesso Online
-
-1. Acesse: # https://srloga.github.io/
-
-### 🎨 Personalização
-
-## Cores Principais
-css
-:root {
-    --primary-color: #3a86ff;
-    --secondary-color: #8338ec;
-    --accent-color: #ff006e;
-    --text-color: #333333;
-    --background-color: #ffffff;
-}
+### Acesso Online https://srloga.github.io/
 
 ### 🤝 Contribuições
 Contribuições são sempre bem-vindas! Sinta-se à vontade para:
-
-Fork o projeto
-Criar uma branch para sua feature (git checkout -b feature/AmazingFeature)
-Commit suas mudanças (git commit -m 'Add some AmazingFeature')
-Push para a branch (git push origin feature/AmazingFeature)
-Abrir um Pull Request
 
 ### 📞 Contato
 Lucas Ramos - Desenvolvedor Web
