@@ -1,14 +1,14 @@
-# 🚀 Portfólio - Lucas Ramos
+# Portfólio - Lucas Ramos
 
 > Portfólio profissional desenvolvido para showcase de projetos e habilidades em desenvolvimento web
 
-## 📋 Sobre o Projeto
+## Sobre o Projeto
 
 Portfólio pessoal desenvolvido com HTML, CSS e JavaScript, apresentando minha trajetória profissional, habilidades técnicas e projetos desenvolvidos. O site é totalmente responsivo e otimizado para SEO.
 
 ![Preview do Portfólio](assets/preview.jpg)
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 - **Design Responsivo** - Adaptável a todos os dispositivos
 - **Navegação Suave** - Scroll suave entre seções
@@ -17,7 +17,7 @@ Portfólio pessoal desenvolvido com HTML, CSS e JavaScript, apresentando minha t
 - **Timeline Profissional** - Linha do tempo da experiência profissional
 - **SEO Otimizado** - Meta tags e estrutura semântica
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 ### Frontend
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
