@@ -32,11 +32,11 @@ Portfólio pessoal desenvolvido com HTML, CSS e JavaScript, apresentando minha t
 ![Google Fonts](https://img.shields.io/badge/Google_Fonts-4285F4?style=for-the-badge&logo=google&logoColor=white)
 
 
-## 🚀 Como Executar o Projeto
+## Como Executar o Projeto
 
 Acesse: https://srloga.github.io/
 
-## 📞 Contatos
+## Contatos
 
 - 📧 Email: lucas.vinicius.loga@gmail.com
 - 📱 Telemóvel: +351 938 673 764
