@@ -34,7 +34,7 @@ Portfólio pessoal desenvolvido com HTML, CSS e JavaScript, apresentando minha t
 
 ## 🚀 Como Executar o Projeto
 
-### Acesse: https://srloga.github.io/
+Acesse: https://srloga.github.io/
 
 ## 📞 Contatos
 
