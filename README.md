@@ -35,23 +35,6 @@ Portfólio pessoal desenvolvido com HTML, CSS e JavaScript, apresentando minha t
 ![Font Awesome](https://img.shields.io/badge/Font_Awesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white)
 ![Google Fonts](https://img.shields.io/badge/Google_Fonts-4285F4?style=for-the-badge&logo=google&logoColor=white)
 
-## 📁 Estrutura do Projeto
-portfolio/
-├── index.html
-├── style.css
-├── script.js
-├── send.php
-├── assets/
-│ ├── lucas.jpeg
-│ ├── logo2.png
-│ ├── resume.pdf
-│ ├── portfolio.jpg
-│ ├── livraria.jpg
-│ ├── spotify.jpg
-│ ├── fakeagency.jpg
-│ └── sitepessoal.jpg
-└── README.md
-
 
 ## 🚀 Como Executar o Projeto
 
