@@ -1,9 +1,5 @@
 # 🚀 Portfólio - Lucas Ramos
 
-![GitHub last commit](https://img.shields.io/github/last-commit/srloga/portfolio)
-![GitHub license](https://img.shields.io/github/license/srloga/portfolio)
-![Website](https://img.shields.io/website?url=https%3A%2F%2Fsrloga.github.io%2Fportfolio)
-
 > Portfólio profissional desenvolvido para showcase de projetos e habilidades em desenvolvimento web
 
 ## 📋 Sobre o Projeto
