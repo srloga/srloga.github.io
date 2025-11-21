@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Mensagem Enviada - Lucas Ramos</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,12 +15,14 @@
             align-items: center;
             text-align: center;
             padding: 20px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2a2a2a 100%);
         }
         
         .success-icon {
             font-size: 5rem;
             color: var(--accent-color);
             margin-bottom: 30px;
+            animation: bounce 1s ease infinite;
         }
         
         .success-title {
@@ -34,6 +36,7 @@
             margin-bottom: 40px;
             color: var(--light-gray);
             max-width: 600px;
+            line-height: 1.6;
         }
         
         .btn-container {
@@ -43,9 +46,18 @@
             justify-content: center;
         }
         
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
         @media (max-width: 768px) {
             .success-title {
                 font-size: 2rem;
+            }
+            
+            .success-icon {
+                font-size: 4rem;
             }
             
             .btn-container {
@@ -65,9 +77,12 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="index.html" class="logo">LUCAS RAMOS</a>
+                <a href="index.html" class="logo">srloga</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <nav>
-                    <ul>
+                    <ul id="navMenu">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="index.html#about">Sobre</a></li>
                         <li><a href="index.html#projects">Projetos</a></li>
@@ -80,4 +95,26 @@
 
     <!-- Conteúdo de Sucesso -->
     <section class="success-container">
-        <
+        <div class="container">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h1 class="success-title">Mensagem Enviada!</h1>
+            <p class="success-message">
+                Obrigado pelo seu contato! Sua mensagem foi enviada com sucesso e retornarei o mais breve possível.
+                Enquanto isso, sinta-se à vontade para explorar mais do meu trabalho.
+            </p>
+            <div class="btn-container">
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fas fa-home"></i> Voltar ao Início
+                </a>
+                <a href="index.html#projects" class="btn btn-secondary">
+                    <i class="fas fa-briefcase"></i> Ver Projetos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

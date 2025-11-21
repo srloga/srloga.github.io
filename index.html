@@ -2,10 +2,13 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Portfólio - Lucas Ramos</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
     <!-- Header -->
@@ -13,7 +16,7 @@
         <div class="container">
             <div class="header-content">
                 <a href="#" class="logo">srloga</a>
-                <button class="menu-toggle" id="menuToggle">
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
                     <i class="fas fa-bars"></i>
                 </button>
                 <nav>
@@ -40,7 +43,7 @@
                     <h1>Desenvolvedor <span class="highlight">Web</span></h1>
                     <p>Meu nome é Lucas Ramos, sou um desenvolvedor web apaixonado por criar experiências digitais incríveis.<br> Especializado em PHP, HTML, CSS, JavaScript e Prestashop.</p>
                     <div class="hero-buttons">
-                        <a href="https://drive.google.com/file/d/1VjylphwmFmZp6dTvNoHJMV3i5Vta87go/view" class="btn btn-primary" download>
+                        <a href="assets/resume.pdf" class="btn btn-primary" download>
                             <i class="fas fa-download"></i> Baixar CV
                         </a>
                         <a href="#projects" class="btn btn-secondary">
@@ -50,7 +53,7 @@
                 </div>
                 <div class="hero-image">
                     <div class="profile-image hero-profile">
-                        <img src="assets/logo2.png" width="250px" height="250px" alt="Lucas Ramos Logo" class="logo-hero">
+                        <img src="assets/logo2.png" width="250" height="250" alt="Lucas Ramos Logo" class="logo-hero">
                     </div>
                     <div class="location">
                         <i class="fas fa-map-marker-alt"></i>
@@ -340,7 +343,7 @@
             </div>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image">
+                    <div class="project-image logo-image">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
                     <div class="project-content">
@@ -352,16 +355,16 @@
                             <span class="tech-tag">MySQL</span>
                             <span class="tech-tag">JavaScript</span>
                         </div>
-                       <div class="project-links">
-                            <a href="https://www.azhabitacao.pt/" class="project-link">
+                        <div class="project-links">
+                            <a href="https://www.azhabitacao.pt/" class="project-link" target="_blank" rel="noopener">
                                 <i class="fas fa-link"></i> Link
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/portfolio.jpg" alt="Portfólio - Lucas Ramos" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="project-image contain-image">
+                        <img src="assets/portfolio.jpeg" alt="Portfólio - Lucas Ramos" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div class="project-fallback" style="display: none;">
                             <i class="fas fa-building"></i>
                         </div>
@@ -376,14 +379,14 @@
                             <span class="tech-tag">PHP</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/srloga/srloga.github.io" class="project-link">
+                            <a href="https://github.com/srloga/srloga.github.io" class="project-link" target="_blank" rel="noopener">
                                 <i class="fab fa-github"></i> Código
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">
+                    <div class="project-image contain-image">
                         <img src="assets/livraria.jpg" alt="Sistema Livraria" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div class="project-fallback" style="display: none;">
                             <i class="fas fa-book"></i>
@@ -391,7 +394,7 @@
                     </div>
                     <div class="project-content">
                         <h3>Sistema Livraria</h3>
-                        <p>Sistema de gestão para livraria com controle de estoque, vendas e relatórios, desenvolvido com foco em usabilidade e performance.</p>
+                        <p>Sistema de gestão para livraria online com controle de estoque, vendas e relatórios, desenvolvido com foco em usabilidade e performance.</p>
                         <div class="project-tech">
                             <span class="tech-tag">PHP</span>
                             <span class="tech-tag">MySQL</span>
@@ -399,15 +402,15 @@
                             <span class="tech-tag">CSS</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/srloga/livraria_online" class="project-link">
+                            <a href="https://github.com/srloga/livraria_online" class="project-link" target="_blank" rel="noopener">
                                 <i class="fab fa-github"></i> Código
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/spotify.jpg" alt="Clone Spotify" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="project-image contain-image">
+                        <img src="assets/spotify.jpeg" alt="Clone Spotify" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div class="project-fallback" style="display: none;">
                             <i class="fab fa-spotify"></i>
                         </div>
@@ -421,15 +424,15 @@
                             <span class="tech-tag">JavaScript</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/srloga/spotify" class="project-link">
+                            <a href="https://github.com/srloga/spotify" class="project-link" target="_blank" rel="noopener">
                                 <i class="fab fa-github"></i> Código
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/fakeagency.jpg" alt="Fake Agency" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="project-image contain-image">
+                        <img src="assets/fakeagency.jpeg" alt="Fake Agency" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div class="project-fallback" style="display: none;">
                             <i class="fas fa-building"></i>
                         </div>
@@ -444,29 +447,29 @@
                             <span class="tech-tag">PHP</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/srloga/fakeagency" class="project-link">
+                            <a href="https://github.com/srloga/fakeagency" class="project-link" target="_blank" rel="noopener">
                                 <i class="fab fa-github"></i> Código
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/sitepessoal.jpg" alt="Site Pessoal" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="project-image contain-image">
+                        <img src="assets/sitepessoal.jpeg" alt="Site Pessoal" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div class="project-fallback" style="display: none;">
                             <i class="fas fa-user"></i>
                         </div>
                     </div>
                     <div class="project-content">
                         <h3>Chiefs Kingdom</h3>
-                        <p>Site de hobbie pessoal relacionado ao futebol americano, desenvolvido com design clean e responsivo, destacando a equipa da NFL, Kansas City Chiefs e sua trajetória.</p>
+                        <p>Site de hobbie pessoal relacionado ao futebol americano, desenvolvido com design clean e responsivo.</p>
                         <div class="project-tech">
                             <span class="tech-tag">HTML</span>
                             <span class="tech-tag">CSS</span>
                             <span class="tech-tag">JavaScript</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/srloga/loga" class="project-link">
+                            <a href="https://github.com/srloga/loga" class="project-link" target="_blank" rel="noopener">
                                 <i class="fab fa-github"></i> Código
                             </a>
                         </div>
@@ -556,13 +559,13 @@
                     <span>© Todos os direitos reservados - Lucas Ramos 2025</span>
                 </div>
                 <div class="social-links">
-                    <a href="https://github.com/srloga" class="social-link" title="GitHub" target="_blank">
+                    <a href="https://github.com/srloga" class="social-link" title="GitHub" target="_blank" rel="noopener">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/lucas-ramos-loga/" class="social-link" title="LinkedIn" target="_blank">
+                    <a href="https://www.linkedin.com/in/lucas-ramos-loga/" class="social-link" title="LinkedIn" target="_blank" rel="noopener">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://www.hackerrank.com/profile/lucas_vinicius_5" class="social-link" title="HackerRank" target="_blank">
+                    <a href="https://www.hackerrank.com/profile/lucas_vinicius_5" class="social-link" title="HackerRank" target="_blank" rel="noopener">
                         <i class="fab fa-hackerrank"></i>
                     </a>
                     <a href="mailto:lucas.vinicius.loga@gmail.com" class="social-link" title="Email">
@@ -578,9 +581,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>
-
-
-
-

@@ -28,6 +28,8 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container {
@@ -36,7 +38,7 @@ body {
     padding: 0 20px;
 }
 
-/* Header e Navegação */
+/* Header e Navegação - CORREÇÃO DO MENU HAMBURGUER */
 header {
     background-color: rgba(26, 26, 26, 0.98);
     position: fixed;
@@ -52,6 +54,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo {
@@ -59,6 +62,7 @@ header {
     font-weight: 700;
     color: var(--accent-color);
     text-decoration: none;
+    z-index: 1001;
 }
 
 nav ul {
@@ -104,6 +108,11 @@ nav a:hover::after {
     color: var(--text-color);
     font-size: 1.5rem;
     cursor: pointer;
+    z-index: 1001;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* Seção Hero */
@@ -319,15 +328,17 @@ section::before {
     margin: 0 auto;
 }
 
-/* Sobre */
+/* Sobre - CORREÇÃO COMPLETA DA IMAGEM E ALINHAMENTO */
 .about-content {
     display: flex;
     align-items: center;
     gap: 50px;
+    width: 100%;
 }
 
 .about-text {
     flex: 1;
+    min-width: 0;
 }
 
 .about-text h3 {
@@ -344,12 +355,25 @@ section::before {
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
+    min-width: 0;
 }
 
 .about-profile {
     width: 380px;
     height: 380px;
     border-radius: 50%;
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 15px 35px rgba(255, 255, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.about-profile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 45px rgba(255, 255, 0, 0.3);
 }
 
 .about-profile img {
@@ -357,14 +381,20 @@ section::before {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+    transition: transform 0.3s ease;
 }
 
-/* Estatísticas Sobre */
+.about-profile:hover img {
+    transform: scale(1.1);
+}
+
+/* Estatísticas Sobre - CORREÇÃO DE CENTRALIZAÇÃO */
 .about-stats {
     display: flex;
     justify-content: space-between;
     margin: 30px 0;
     max-width: 400px;
+    width: 100%;
 }
 
 .stat {
@@ -373,6 +403,7 @@ section::before {
     border-radius: 10px;
     transition: all 0.3s ease;
     transform: scale(1);
+    flex: 1;
 }
 
 .stat:hover {
@@ -705,7 +736,7 @@ section::before {
     color: var(--accent-hover);
 }
 
-/* Projetos */
+/* Projetos - MELHORIA NAS IMAGENS */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -719,6 +750,9 @@ section::before {
     transition: all 0.3s ease;
     transform: scale(1);
     position: relative;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
 }
 
 .project-card::before {
@@ -751,17 +785,38 @@ section::before {
     overflow: hidden;
     position: relative;
     transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
 .project-card:hover .project-image {
     transform: scale(1.1);
 }
 
+/* SOLUÇÃO PARA AS IMAGENS - Mantém proporção sem espaços indesejados */
 .project-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+}
+
+/* Container inteligente para imagens que devem manter proporção */
+.project-image.contain-image img {
+    object-fit: contain;
+    padding: 15px;
+    background-color: var(--primary-color);
+}
+
+/* Para logos e imagens com fundo transparente */
+.project-image.logo-image {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+}
+
+.project-image.logo-image img {
+    object-fit: contain;
+    padding: 20px;
+    max-width: 80%;
+    max-height: 80%;
 }
 
 .project-card:hover .project-image img {
@@ -804,6 +859,9 @@ section::before {
     position: relative;
     z-index: 1;
     transition: transform 0.3s ease;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover .project-content {
@@ -823,6 +881,7 @@ section::before {
     color: var(--light-gray);
     margin-bottom: 20px;
     transition: transform 0.3s ease;
+    flex: 1;
 }
 
 .project-card:hover .project-content p {
@@ -854,6 +913,7 @@ section::before {
 .project-links {
     display: flex;
     gap: 15px;
+    margin-top: auto;
 }
 
 .project-link {
@@ -871,14 +931,21 @@ section::before {
     transform: scale(1.1) translateY(-2px);
 }
 
-/* Contato */
+/* Contato - CORREÇÃO COMPLETA DO LAYOUT */
 .contact-content {
     display: flex;
     gap: 40px;
+    align-items: flex-start;
+    width: 100%;
 }
 
 .contact-info {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
 }
 
 .contact-item {
@@ -890,6 +957,9 @@ section::before {
     border-radius: 10px;
     transition: all 0.3s ease;
     transform: scale(1);
+    width: 100%;
+    max-width: 400px;
+    justify-content: flex-start;
 }
 
 .contact-item:hover {
@@ -908,12 +978,18 @@ section::before {
     color: var(--accent-color);
     font-size: 1.2rem;
     transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
 .contact-item:hover .contact-icon {
     transform: scale(1.1);
     background-color: var(--accent-color);
     color: var(--primary-color);
+}
+
+.contact-text {
+    text-align: left;
+    flex: 1;
 }
 
 .contact-text h4 {
@@ -936,6 +1012,7 @@ section::before {
     border-radius: 10px;
     transition: all 0.3s ease;
     transform: scale(1);
+    width: 100%;
 }
 
 .contact-form:hover {
@@ -961,6 +1038,8 @@ section::before {
     color: var(--text-color);
     font-size: 1rem;
     transition: all 0.3s ease;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .form-control:focus {
@@ -975,7 +1054,7 @@ textarea.form-control {
     resize: vertical;
 }
 
-/* Footer */
+/* Footer - ESTRUTURA CORRIGIDA */
 footer {
     background-color: var(--secondary-color);
     padding: 40px 0 20px;
@@ -986,6 +1065,11 @@ footer {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
+}
+
+.footer-text {
+    flex: 1;
+    text-align: left;
 }
 
 .footer-text p {
@@ -1001,6 +1085,7 @@ footer {
 .footer-text span {
     color: var(--light-gray);
     font-size: 0.9rem;
+    display: block;
 }
 
 .social-links {
@@ -1034,9 +1119,10 @@ footer {
     border-top: 1px solid #444;
     color: var(--light-gray);
     font-size: 0.9rem;
+    width: 100%;
 }
 
-/* Responsividade */
+/* Responsividade - CORREÇÕES ESPECÍFICAS */
 @media (max-width: 992px) {
     :root {
         --section-spacing: 70px;
@@ -1073,6 +1159,49 @@ footer {
         grid-template-columns: 1fr;
         gap: 20px;
     }
+    
+    /* CORREÇÃO CRÍTICA - Contact section abaixo de 992px */
+    .contact-content {
+        flex-direction: column;
+        gap: 40px;
+        width: 100%;
+    }
+    
+    .contact-info,
+    .contact-form {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .contact-info {
+        order: 2;
+    }
+    
+    .contact-form {
+        order: 1;
+    }
+    
+    .contact-item {
+        max-width: 100%;
+        justify-content: center;
+    }
+    
+    /* CORREÇÃO DO FOOTER - 769px a 992px */
+    .footer-content {
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .footer-text {
+        text-align: left;
+        flex: 1;
+    }
+    
+    .social-links {
+        flex-shrink: 0;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1080,16 +1209,18 @@ footer {
         --section-spacing: var(--section-spacing-mobile);
     }
     
+    /* CORREÇÃO DO MENU HAMBURGUER - Posicionamento correto */
     nav ul {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 70px;
+        top: 100%;
         left: 0;
         width: 100%;
         background-color: var(--primary-color);
         padding: 20px;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
     }
     
     nav ul.show {
@@ -1098,10 +1229,15 @@ footer {
     
     nav li {
         margin: 10px 0;
+        text-align: center;
     }
     
     .menu-toggle {
         display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
     }
     
     .hero {
@@ -1153,24 +1289,96 @@ footer {
         left: -30px;
     }
     
+    /* CORREÇÃO DAS STATS - 460px a 768px */
     .about-stats {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        max-width: 100%;
+        margin: 30px auto;
+    }
+    
+    .stat {
+        flex: 1;
+        min-width: 120px;
+        padding: 15px 10px;
+    }
+    
+    .stat h4 {
+        font-size: 1.8rem;
+    }
+    
+    .stat p {
+        font-size: 0.8rem;
+    }
+    
+    /* CORREÇÃO DA SEÇÃO DE CONTACTO PARA MOBILE */
+    .contact-content {
+        gap: 30px;
+        width: 100%;
+    }
+    
+    .contact-info,
+    .contact-form {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .contact-item {
         flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        max-width: 100%;
+    }
+    
+    .contact-text {
+        text-align: center;
+    }
+    
+    .contact-form {
+        padding: 20px;
+    }
+    
+    /* MELHORIA - Projetos em mobile */
+    .projects-grid {
+        grid-template-columns: 1fr;
         gap: 20px;
+    }
+    
+    .project-image {
+        height: 180px;
+    }
+    
+    .project-image.contain-image img {
+        padding: 10px;
+    }
+    
+    .project-image.logo-image img {
+        padding: 15px;
+    }
+    
+    /* CORREÇÃO DO FOOTER - Mobile */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
         align-items: center;
     }
     
-    .certifications-grid {
-        grid-template-columns: 1fr;
+    .footer-text {
+        order: 1;
+        text-align: center;
     }
     
-    .certification-header {
-        flex-direction: column;
-        align-items: flex-start;
+    .social-links {
+        order: 2;
+        margin-left: 0;
+        margin-bottom: 0;
     }
     
-    .cert-meta {
-        flex-direction: column;
-        align-items: flex-start;
+    .copyright {
+        order: 3;
+        margin-top: 20px;
     }
     
     .skill-card:hover,
@@ -1190,6 +1398,7 @@ footer {
     
     .btn {
         width: 100%;
+        max-width: 300px;
         justify-content: center;
     }
     
@@ -1242,5 +1451,260 @@ footer {
     
     .hero h1 {
         font-size: 2rem;
+    }
+    
+    /* CORREÇÃO FINAL - Contact section em telas muito pequenas */
+    .contact-content {
+        gap: 25px;
+    }
+    
+    .contact-form {
+        padding: 15px;
+    }
+    
+    .contact-item {
+        padding: 15px;
+    }
+    
+    /* CORREÇÃO DAS STATS - Abaixo de 460px */
+    .about-stats {
+        flex-direction: column;
+        gap: 20px;
+        max-width: 280px;
+        margin: 30px auto;
+    }
+    
+    .stat {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    /* MELHORIA - Projetos em telas muito pequenas */
+    .project-image {
+        height: 160px;
+    }
+    
+    .project-image.contain-image img {
+        padding: 8px;
+    }
+    
+    .project-image.logo-image img {
+        padding: 12px;
+    }
+    
+    /* Ajustes específicos para iPhone e Safari */
+    @supports (-webkit-touch-callout: none) {
+        .hero {
+            min-height: -webkit-fill-available;
+        }
+        
+        body {
+            -webkit-overflow-scrolling: touch;
+        }
+    }
+}
+
+/* CORREÇÃO ESPECÍFICA PARA 460px ATÉ 768px */
+@media (min-width: 461px) and (max-width: 768px) {
+    .about-stats {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        max-width: 100%;
+        margin: 30px auto;
+    }
+    
+    .stat {
+        flex: 1;
+        min-width: 120px;
+        padding: 15px 10px;
+    }
+    
+    .stat h4 {
+        font-size: 1.8rem;
+    }
+    
+    .stat p {
+        font-size: 0.8rem;
+    }
+}
+
+/* CORREÇÃO ESPECÍFICA PARA 769px ATÉ 992px */
+@media (min-width: 769px) and (max-width: 992px) {
+    .about-stats {
+        justify-content: center;
+        margin: 30px auto;
+        max-width: 500px;
+    }
+    
+    .stat {
+        flex: 1;
+        padding: 20px 15px;
+    }
+    
+    /* Footer específico para 769px-992px */
+    .footer-content {
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .footer-text {
+        text-align: left;
+        flex: 1;
+    }
+    
+    .social-links {
+        margin-left: 0;
+        justify-content: flex-end;
+        flex-shrink: 0;
+    }
+}
+
+/* CORREÇÃO DO FOOTER PARA DESKTOP (993px+) */
+@media (min-width: 993px) {
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        margin-bottom: 25px;
+    }
+    
+    .footer-text {
+        flex: 1;
+        text-align: left;
+        min-width: 0;
+    }
+    
+    .social-links {
+        display: flex;
+        gap: 15px;
+        flex-shrink: 0;
+        margin-left: 40px;
+        justify-content: flex-end;
+    }
+    
+    .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #444;
+        color: var(--light-gray);
+        font-size: 0.9rem;
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* CORREÇÃO ESPECÍFICA DA ABOUT-IMAGE PARA ECRÃS MENORES */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+    
+    .about-text {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .about-image {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .about-profile {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-profile {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 400px) {
+    .about-profile {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* Correções específicas para Safari - SINTAXE CORRIGIDA */
+@media not all and (min-resolution: 0.001dpcm) { 
+    .hero {
+        background-attachment: scroll;
+    }
+}
+
+/* Suporte para orientação landscape em mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+        padding: 120px 0 60px;
+    }
+    
+    .hero-content {
+        flex-direction: row;
+    }
+    
+    .hero-profile {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    /* Contact section em landscape */
+    .contact-content {
+        flex-direction: row;
+        gap: 20px;
+    }
+    
+    .contact-info,
+    .contact-form {
+        flex: 1;
+    }
+    
+    /* About section em landscape */
+    .about-content {
+        flex-direction: row;
+        gap: 30px;
+    }
+    
+    .about-profile {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Ajuste das imagens dos projetos para viewports 400px-768px */
+@media (min-width: 400px) and (max-width: 768px) {
+    .project-image.contain-image img {
+        object-fit: cover;
+        padding: 0;
+        background-color: transparent;
+    }
+    
+    .project-image.logo-image img {
+        object-fit: cover;
+        padding: 0;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    
+    .project-image.contain-image,
+    .project-image.logo-image {
+        background-color: var(--secondary-color);
     }
 }
