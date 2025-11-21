@@ -1707,5 +1707,34 @@ footer {
     .project-image.logo-image {
         background-color: var(--secondary-color);
     }
+}
 
+/* Ajuste da location para manter posição em ecrãs menores */
+@media (max-width: 992px) {
+    .location {
+        right: 20px;
+        bottom: 20px;
+        transform: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .location {
+        right: 10px;
+        bottom: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .location {
+        right: 5px;
+        bottom: 5px;
+    }
+}
+
+/* Garantir que a location não se mova com transform no hover em mobile */
+@media (max-width: 768px) {
+    .location:hover {
+        transform: scale(1.02);
+    }
 }
