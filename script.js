@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Form submission
+    // Form submission - VERSÃO FORMSPREE
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Envio do formulário
+            // Envio do formulário via Formspree
             const formData = new FormData(this);
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.innerHTML;
@@ -60,6 +60,45 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
             submitButton.disabled = true;
             
+            // ENVIO FORMSPREE - Substitui o PHP
+            fetch('https://formspree.io/f/mkgenwqa', {
+                method: "POST",
+                headers: { 
+                    "Accept": "application/json"
+                },
+                body: formData
+            })
+            .then(response => {
+                console.log('Status da resposta:', response.status);
+                if (response.ok) {
+                    // Formspree retorna 200 OK quando o formulário é aceito
+                    return response.json();
+                } else {
+                    throw new Error('Erro no envio do formulário');
+                }
+            })
+            .then(data => {
+                console.log('Resposta do Formspree:', data);
+                showNotification('Mensagem enviada com sucesso!', 'success');
+                contactForm.reset();
+                
+                // Redirecionar para página de sucesso após 1.5 segundos
+                setTimeout(() => {
+                    window.location.href = 'sucesso.html';
+                }, 1500);
+            })
+            .catch(error => {
+                console.error('Erro completo:', error);
+                showNotification('Erro ao enviar mensagem. Tente novamente.', 'error');
+            })
+            .finally(() => {
+                // Restaurar botão
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+            });
+
+            // CÓDIGO PHP ORIGINAL - MANTIDO COMENTADO PARA REFERÊNCIA
+            /*
             fetch('send.php', {
                 method: 'POST',
                 body: formData
@@ -91,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitButton.innerHTML = originalText;
                 submitButton.disabled = false;
             });
+            */
         });
     }
 
@@ -359,3 +399,4 @@ window.addEventListener('load', function() {
 });
 
 console.log('Portfólio Lucas Ramos carregado com sucesso!');
+console.log('Formspree integrado: https://formspree.io/f/mkgenwqa');
